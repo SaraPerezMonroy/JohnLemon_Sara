@@ -9,7 +9,6 @@ public class Observer : MonoBehaviour
     public GameEnding gameEnding; 
 
 
-
     void Update()
     {
         if(m_IsPlayerInRange)
@@ -22,7 +21,7 @@ public class Observer : MonoBehaviour
             {
                 if(raycastHit.collider.transform == player) // Confirmar que el rayo que lanzo choca con el player, no hay nada en medio entre los ojos de la gárgola y el player
                 {
-
+                    gameEnding.CaughtPlayer(); // Accedemos al código del gameEnding para hacer esta función que tenemos allí pública
                 }
             }
         }

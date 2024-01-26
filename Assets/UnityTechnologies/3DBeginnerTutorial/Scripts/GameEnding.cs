@@ -17,16 +17,6 @@ public class GameEnding : MonoBehaviour
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
 
-
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject == player)
-        {
-            m_IsPlayerAtExit = true;
-        }
- 
-    }
-
     void Update()
     {
         if(m_IsPlayerAtExit)
@@ -37,6 +27,20 @@ public class GameEnding : MonoBehaviour
         {
             EndLevel(caughtBackgroundImageCanvasGroup, true);
         }
+    }
+
+    public void CaughtPlayer() // Hacemos la función pública, pero el IsPlayerCaught sigue siendo privado, no todo el mundo necesita saber si lo atrapamos :)
+    {
+        m_IsPlayerCaught = true; 
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            m_IsPlayerAtExit = true;
+        }
+
     }
 
     void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart)
