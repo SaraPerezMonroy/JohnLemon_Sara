@@ -10,12 +10,16 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 20f;
     Rigidbody m_Rigidbody;
     Quaternion m_Rotation = Quaternion.identity; // Esto sirve como ponerle a un vector 0f, para que deje de girar, pero con lo cuaterniones es diferente y en vez de poner 0, pondremos .identity (consultar apuntes)
+    AudioSource m_AudioSource;
+
 
     // Start is called before the first frame update
     void Start()
     {
         m_Animator = GetComponent<Animator>(); // Acceder al animator
         m_Rigidbody = GetComponent<Rigidbody>(); // Acceder al rigidbody
+        m_AudioSource = GetComponent<AudioSource>(); // Acceder al audio source
+
     }
 
     // Update is called once per frame
@@ -31,6 +35,18 @@ public class PlayerMovement : MonoBehaviour
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput; // Lo juntamos en una sola variable, si se mueve en horizontal o vertical ya está caminando
         m_Animator.SetBool("IsWalking", isWalking); // cambiamos el animator a walking
+
+        if(isWalking)
+        {
+            if(!m_AudioSource.isPlaying) // PAra que no lo haga en cada frame
+            {
+                m_AudioSource.Play();
+            }
+        }
+        else
+        {
+            m_AudioSource.Stop();
+        }
 
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         m_Rotation = Quaternion.LookRotation(desiredForward);  // Actualiza el valor de la rotación teniendo en cuenta el movimiento de nuestro quaternion
