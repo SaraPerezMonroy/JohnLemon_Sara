@@ -3214,6 +3214,10 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 1916999099}
+    - target: {fileID: 4356995319538728303, guid: e9da483e639d28c4a81abfd035d8708e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4885016794189887485, guid: e9da483e639d28c4a81abfd035d8708e, type: 3}
       propertyPath: player
       value: 
@@ -4663,6 +4667,11 @@ PrefabInstance:
       objectReference: {fileID: 1477498335}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9da483e639d28c4a81abfd035d8708e, type: 3}
+--- !u!82 &1574304381 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7701812615497374510, guid: e9da483e639d28c4a81abfd035d8708e, type: 3}
+  m_PrefabInstance: {fileID: 7905311728344100179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1614192518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,6 +4984,18 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 979606190}
+    - target: {fileID: 4356995319538728303, guid: e9da483e639d28c4a81abfd035d8708e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885016794189887485, guid: e9da483e639d28c4a81abfd035d8708e, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1574304381}
+    - target: {fileID: 4885016794189887485, guid: e9da483e639d28c4a81abfd035d8708e, type: 3}
+      propertyPath: alerta
+      value: 
+      objectReference: {fileID: 1574304381}
     - target: {fileID: 4885016794189887485, guid: e9da483e639d28c4a81abfd035d8708e, type: 3}
       propertyPath: player
       value: 
